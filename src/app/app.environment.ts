@@ -1,4 +1,4 @@
-export const environment = {
+export const Environment = {
   firebaseConfig: {
     apiKey: "AIzaSyCwQsp98RaRa9UrHxZDRx7r8sgE6mvIH4Y",
     authDomain: "razy-rice.firebaseapp.com",
