@@ -4,6 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import {Environment} from "./app.environment";
+import * as firebase from "firebase";
+import 'firebase/firestore';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +21,13 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    console.log("initializing Firebase...");
+    firebase.initializeApp(Environment.firebaseConfig);
+    console.log("Firebase initialized!");
+
+    firebase.firestore();
+    console.log("Firestore initialized!");
   }
 }
 
