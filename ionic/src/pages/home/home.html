@@ -5,6 +5,10 @@
       <h1>Rice</h1>
     </div>
     <img src="../../assets/imgs/steaming_rice_bowl.gif" />
-    <button ion-button large block color="light"><h2>Make Rice</h2></button>
+    <div class="options">
+      <h2>{{time | date : 'H:mm'}}</h2>
+      <h2 (click)="selectCups()">{{cups}} {{cups > 1 ? "cups" : "cup"}}</h2>
+    </div>
+    <button ion-button large block color="light" (click)="makingRice()"><h2>Make Rice</h2></button>
   </div>
 </ion-content>
