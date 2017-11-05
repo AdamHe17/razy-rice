@@ -2,6 +2,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { NavController, ActionSheetController } from 'ionic-angular';
 
 import { MakingRicePage } from '../making-rice/making-rice';
+import {DataServiceProvider} from "../../providers/data-service/data-service";
 
 @Component({
   selector: 'page-home',
@@ -17,7 +18,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private renderer2: Renderer2,
-    public actionSheetCtrl: ActionSheetController
+    public actionSheetCtrl: ActionSheetController,
+    private dsp: DataServiceProvider
   ) {
     this.time = new Date();
     this.timeDisplay = new Date(this.time.getTime() - this.time.getTimezoneOffset() * 60000).toISOString();
@@ -26,6 +28,7 @@ export class HomePage {
   }
 
   makingRice() {
+    this.dsp.makeRice(this.cups);
     this.navCtrl.push(MakingRicePage);
   }
 

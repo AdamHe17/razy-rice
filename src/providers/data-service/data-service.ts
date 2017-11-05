@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import * as firebase from "firebase";
+import {AngularFireDatabase} from "angularfire2/database";
 
 /*
   Generated class for the DataServiceProvider provider.
@@ -13,8 +13,12 @@ import * as firebase from "firebase";
 export class DataServiceProvider {
   db;
 
-  constructor(public http: Http) {
-    this.db = firebase.firestore();
+  constructor(public http: Http, public afdb: AngularFireDatabase) {
+    this.db = afdb.object('/');
+  }
+
+  makeRice(cups) {
+    this.db.update({ numcups: cups });
   }
 
 }

@@ -11,6 +11,8 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
 import {AngularFireModule} from "angularfire2";
 import {AngularFirestoreModule} from "angularfire2/firestore";
 import {Environment} from "./app.environment";
+import {HttpModule} from "@angular/http";
+import {AngularFireDatabase} from "angularfire2/database";
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import {Environment} from "./app.environment";
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(Environment.firebaseConfig),
     AngularFirestoreModule.enablePersistence()
@@ -34,7 +37,8 @@ import {Environment} from "./app.environment";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataServiceProvider
+    DataServiceProvider,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}
