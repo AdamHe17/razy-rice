@@ -1,3 +1,21 @@
 page-home {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 10%;
+    background-color: #FFB44B;
+    color: white;
+  }
 
+  img {
+    height: 30%;
+  }
+
+  button h2 {
+    color: #FFB44B;
+  }
 }
