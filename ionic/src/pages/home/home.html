@@ -1,12 +1,11 @@
 <ion-content padding>
   <div class="content">
     <div class="title">
-      <h1>Razy</h1>
-      <h1>Rice</h1>
+      <h1>&nbsp;Razy</h1>
+      <h1>&nbsp;&nbsp;&nbsp;&nbsp;Rice</h1>
     </div>
     <img src="../../assets/imgs/steaming_rice_bowl.gif" />
     <div class="options">
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="timeDisplay" (ionChange)="riceTimeChange()"></ion-datetime>
       <h2 (click)="selectCups()">{{cups}} {{cups > 1 ? "cups" : "cup"}}</h2>
     </div>
     <button ion-button large block color="light" (click)="makingRice()"><h2>Make Rice</h2></button>

@@ -21,13 +21,12 @@ export class HomePage {
   ) {
     this.time = new Date();
     this.timeDisplay = new Date(this.time.getTime() - this.time.getTimezoneOffset() * 60000).toISOString();
-    this.cups = 1;
+    this.cups = 2;
     this.maxCups = 4;
   }
 
   makingRice() {
     this.navCtrl.push(MakingRicePage);
-    console.log(this.cups, this.time);
   }
 
   selectCups() {
@@ -43,7 +42,6 @@ export class HomePage {
     }
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'How many cups?',
       buttons: buttons
     });
 

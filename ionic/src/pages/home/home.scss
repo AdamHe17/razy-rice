@@ -15,7 +15,7 @@ page-home {
   .options {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
   }
 
@@ -28,4 +28,5 @@ page-home {
     font-family: Munro;
     font-size: 4rem;
   }
+
 }

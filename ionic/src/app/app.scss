@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: Munro;
-  src: url($font-path + "/Munro.woff") format("woff"), url($font-path + "/Munro.ttf") format('ttf');
+  src: url($font-path + "/munro-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -49,4 +49,20 @@ ion-content {
   width: 100%;
   padding: 10%;
   color: white;
+}
+
+.action-sheet-container {
+  justify-content: center;
+}
+
+.action-sheet-button, .action-sheet-title {
+  color: #FFB44B !important;
+  font-family: Munro;
+  font-size: 4rem !important;
+  border: 0 !important;
+}
+
+.action-sheet-button {
+  display: inline-block !important;
+  width: 25% !important;
 }
