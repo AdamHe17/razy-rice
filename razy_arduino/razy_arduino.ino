@@ -18,7 +18,6 @@ Servo riceservo;
 #define WIFI_SSID "op3"
 #define WIFI_PASSWORD "17292358"
 
-int ricesignal;
 int numcups;
 
 void setup() {
@@ -40,25 +39,20 @@ void setup() {
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   Firebase.set("arduino_on", 1);
-  Firebase.set("ricesignal", 0);
+  Firebase.set("numcups", 0);
 }
 
 
 void loop() {
-  ricesignal = Firebase.getInt("ricesignal");
   numcups = Firebase.getInt("numcups");
-
-  if(numcups < 1) {
-    numcups = 1;
-  }
   if (numcups > 4) {
     numcups = 4;
   }
 
-  if (ricesignal == 1) {
+  if (numcups > 0) {
     razy(numcups);
-    Firebase.set("ricesignal", 0);
-    Firebase.set("status", "Cooking");
+    Firebase.set("numcups", 0);
+//    Firebase.set("status", "Cooking");
     while (true) {
       delay(10000);
     }
@@ -83,7 +77,7 @@ void pushrice(int cups) {
 
 void pumpwater(int cups) {
   pump(512);
-  delay(cups * 15000);
+  delay(cups * 20000);
   pump(0);
 }
 
