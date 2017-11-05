@@ -18,4 +18,14 @@ page-home {
     justify-content: space-around;
     width: 100%;
   }
+
+  ion-datetime {
+    position: relative;
+    padding: 0 !important;
+  }
+
+  .datetime-text {
+    font-family: Munro;
+    font-size: 4rem;
+  }
 }

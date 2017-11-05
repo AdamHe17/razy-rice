@@ -6,7 +6,7 @@
     </div>
     <img src="../../assets/imgs/steaming_rice_bowl.gif" />
     <div class="options">
-      <h2>{{time | date : 'H:mm'}}</h2>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="timeDisplay" (ionChange)="riceTimeChange()"></ion-datetime>
       <h2 (click)="selectCups()">{{cups}} {{cups > 1 ? "cups" : "cup"}}</h2>
     </div>
     <button ion-button large block color="light" (click)="makingRice()"><h2>Make Rice</h2></button>

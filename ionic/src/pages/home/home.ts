@@ -9,22 +9,25 @@ import { MakingRicePage } from '../making-rice/making-rice';
 })
 export class HomePage {
 
-  time: string;
+  time: Date;
   cups: number;
   maxCups: number;
+  timeDisplay: string;
 
   constructor(
     public navCtrl: NavController,
     private renderer2: Renderer2,
     public actionSheetCtrl: ActionSheetController
   ) {
-    this.time = new Date().toISOString();
+    this.time = new Date();
+    this.timeDisplay = new Date(this.time.getTime() - this.time.getTimezoneOffset() * 60000).toISOString();
     this.cups = 1;
     this.maxCups = 4;
   }
 
   makingRice() {
     this.navCtrl.push(MakingRicePage);
+    console.log(this.cups, this.time);
   }
 
   selectCups() {
@@ -45,5 +48,10 @@ export class HomePage {
     });
 
     actionSheet.present();
+  }
+
+  riceTimeChange() {
+    this.time = new Date(new Date(this.timeDisplay).getTime() + new Date().getTimezoneOffset() * 60000);
+    this.time.setSeconds(0);
   }
 }
