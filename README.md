@@ -1,4 +1,4 @@
-# Razy-Rice
+# Razy Rice
 
 ## Inspiration
 We all cook dinner everyday at home and rice is one of the most common things we make. Sometimes we come back late from class and could really use a good meal right when we get back. Making rice takes too long, so we decided to automate that process and start it before we even get home!
